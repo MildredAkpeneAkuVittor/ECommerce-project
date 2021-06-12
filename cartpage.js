@@ -150,7 +150,9 @@ let createCartObjects=()=>{
 }               
 createCartObjects();    
           
-
+alertOrder = () =>{
+    window.alert("Thank you for ordering")
+}
 
 function htmlFormat(c){
 
