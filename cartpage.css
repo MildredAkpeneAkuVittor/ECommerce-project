@@ -67,7 +67,7 @@ body{
     height: 1rem;
 }
 .progress_bar progress{
-    width: 90%;
+    width: 80%;
 }
 .shipping{
     margin-left: 1.5rem;
@@ -76,16 +76,16 @@ body{
     display: inline-block;
     color: #b62c0a;
     margin: 0;
-    font-size: 0.4rem; 
+    font-size: 1rem; 
 }
 .shipping h5{
     display: inline-block;
-    margin-left: 0.3rem;
+    margin-left: 1rem;
     color: #4b851d;
 }
 .shipping a{
     text-decoration: none;
-    font-size: 0.4rem;
+    font-size: 1rem;
     color: #2d9cdb;
 }
 .shipping i{
@@ -104,7 +104,7 @@ img{
     margin-left: 1.5rem;
     position: static;
     right: 4.5rem;
-    top: 20.3rem;
+    top: 10.3rem;
     font-size: 0.8rem;
 }
 .description h6{
@@ -114,7 +114,7 @@ img{
 }
 .description h4{
     margin: 0;
-    color: #196692;
+    color: #002b5c;
     font-size: 1rem;
 }
 .description #dropdown{
@@ -147,7 +147,7 @@ img{
     height: 32rem;
     margin-left: 1.5rem;
     position: static;
-    top: 40rem;
+    top: 50rem;
 }
 .summary .order_summary{
     background-color: #f7e706;
@@ -191,9 +191,9 @@ img{
     height: 2rem;
 }
 .coupon .coup_btn{
-    border: 1px solid  #002b5c;
+    border: 1px solid  #f7e706;
     border-radius: 4px;
-    background-color: #002b5c;
+    background-color:#f7e706;
     color: white;
     font: 1.5rem;
     height: 2.2rem;
