@@ -17,7 +17,7 @@ let cartSubTotal=(new_order)=>{
 console.log(new_order);
 let subTotal=0;
  let quantitySoFar=new_order.counter;
- console.log(quantitySoFar+'quan')
+ 
 
 let objName = 'item';
 for(let i=1; i <= +quantitySoFar; i++ ){
@@ -46,7 +46,7 @@ let costToDelete = +new_order[idToRemove].product_unit_price.match(/\d+/g)*(+new
 new_order.subTotal= +new_order.subTotal-costToDelete;
 new_order.discounted=+new_order.subTotal/2;
 delete new_order[idToRemove];
-console.log(new_order.counter);
+
 let baseName= +idToRemove.match(/\d+/g,'');
 newIndex = +baseName+1;
 while(new_order['item'+newIndex]){
@@ -55,7 +55,7 @@ while(new_order['item'+newIndex]){
     new_order[objname]=new_order[oldIndex];
     delete new_order[oldIndex];
     newIndex++     
-    console.log(new_order[newIndex])
+   
 }
 new_order.counter= +new_order.counter-1;
 

@@ -75,7 +75,7 @@ let loadBluePolka=()=>{
 }
 
 let loadRedPolka=()=>{                                     
-    console.log('blue');
+    
     deleteCurrentImages("product-image");
     for(let i=RedPolka.images.length-1; i>=0;i--){
     let newImage=document.createElement("img");
@@ -132,8 +132,7 @@ const changePicture=(shiftWhere)=>{
         else if (movementTracker>=numberOfPictures){ movementTracker=0;}
      }
     Array.from(pictureList).forEach((picture) => {    
-        console.log(picture);
-        console.log(movementTracker);
+        
         picture.style.display = "none";
     });
     Array.from(pictureList)[movementTracker].style.display='block';
@@ -230,7 +229,7 @@ function orderHandler(){
         let jsonString=localStorage.getItem("new_order");
         let new_order = JSON.parse(jsonString);
         new_order.counter = +new_order.counter + 1;
-        console.log(new_order.counter + 'add');
+       
         let serial='item'+ new_order.counter.toString();
        
         new_order[serial]={product_name: productName.innerText,
