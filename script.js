@@ -1,32 +1,32 @@
-let quantityTag=document.getElementById('display-quantity');   //moved from module
- let currentQuantity = +quantityTag.innerText;                   //moved from module, calls and records the quantity
- const adder = document.getElementById('add');                    //moved from module
- const remover = document.getElementById('remove');                 //moved from module
- adder.addEventListener('click',()=>{quantityControl('add')});     //moved from module
- remover.addEventListener('click', ()=>{quantityControl('minus')});    //moved from module
+let quantityTag=document.getElementById('display-quantity');   
+ let currentQuantity = +quantityTag.innerText;                   
+ const adder = document.getElementById('add');                   
+ const remover = document.getElementById('remove');                
+ adder.addEventListener('click',()=>{quantityControl('add')});     
+ remover.addEventListener('click', ()=>{quantityControl('minus')});    
  
-const hamburger= document.getElementById('hambars');  //hamburger control
+const hamburger= document.getElementById('hambars');  
 const dropMenu= document.getElementById('drop-menu');
 const closeHamburger=document.getElementById('hamclose');
 const pictureList = document.getElementsByClassName('product-image');
-const numberOfPictures = pictureList.length;   //get the length of pictutes in memory
-const movePixLeft = document.getElementById('left');   //image movement control
+const numberOfPictures = pictureList.length;   
+const movePixLeft = document.getElementById('left');   
 const movePixRight = document.getElementById('right');
 const imageParentDiv = document.getElementById('imageOwnDiv');
 const productName = document.getElementById('product-name') 
-const productPrice = document.getElementById('price');      //for changing price tag
-const colorDescription = document.getElementById('color-name');//HTML Tag for color description/description
-const colorBtn1 = document.getElementById('color1');    // color selector button
-const colorBtn2 = document.getElementById('color2');  //color selector button
+const productPrice = document.getElementById('price');      
+const colorDescription = document.getElementById('color-name');
+const colorBtn1 = document.getElementById('color1');    
+const colorBtn2 = document.getElementById('color2');  
 const bagQuantity = document.getElementById('quantity-top');
 
 
 var sizeInfo = "";
 let OnDisplayNow = "";
-let movementTracker = 0;        //display the first image in the html list
+let movementTracker = 0;        
 let noOfItems=0;
 
-movePixLeft.addEventListener('click',()=>{changePicture('L')}); //call on the image scroll controll function using event listeners
+movePixLeft.addEventListener('click',()=>{changePicture('L')}); 
 movePixRight.addEventListener('click',()=>{changePicture('R')});
 
 
@@ -42,7 +42,7 @@ else{loadRedPolka();pictureList[movementTracker].style.display='block';
 
 
 
-BluePolka={                                                      //BluePolka product object
+BluePolka={                                                     
     banner: "polka dots summer dress",
     images:['images/blue_polka_dots_with_redbelt.jpg' , 'images/blue_polka_dots.jpg'],
     price:"50",
@@ -50,15 +50,15 @@ BluePolka={                                                      //BluePolka pro
     productInfo: "Color: blue",
     color:	"#0000FF"
 }
-RedPolka={                                                      //RedPolka product object
+RedPolka={                                                      
     banner: "polka dots summer dress",
     images: ['images/pink_polka_dots_without_belts.jpg', 'images/red_polka_dots.png'],
     price:"50",
     className:"product-image",
     productInfo:"color:red",
-    color:	"#FF0000" 
+    color:	"#FF0000"
 }
-let loadBluePolka=()=>{                                        //BluePolka loader function
+let loadBluePolka=()=>{                                        
    
     deleteCurrentImages("product-image");
     for(let i=BluePolka.images.length; i>=0;i--){
@@ -74,7 +74,7 @@ let loadBluePolka=()=>{                                        //BluePolka loade
     OnDisplayNow = "green";
 }
 
-let loadRedPolka=()=>{                                      //RedPolka loader function
+let loadRedPolka=()=>{                                     
     console.log('blue');
     deleteCurrentImages("product-image");
     for(let i=RedPolka.images.length-1; i>=0;i--){
@@ -91,33 +91,33 @@ let loadRedPolka=()=>{                                      //RedPolka loader fu
     OnDisplayNow = "blue";
 }
 
-colorBtn1.addEventListener("click",(e)=>{  loadBluePolka();}); // trigger on the color choice events
+colorBtn1.addEventListener("click",(e)=>{  loadBluePolka();}); 
 colorBtn2.addEventListener("click",(e)=>{ loadRedPolka();});
 
 let deleteCurrentImages=(imageClassName)=>{
     const elements = document.getElementsByClassName(imageClassName);
     while(elements.length > 0){
         elements[0].parentNode.removeChild(elements[0]);
-        console.log('deleted');
+      
     }
 }
 
-const hamburgerOpen=()=>{           //hamburger menu open
+const hamburgerOpen=()=>{           
     
     dropMenu.style.display='block';
     hamburger.style.display = 'none';
     closeHamburger.style.display='block'
 }
-const hamburgerClose=()=>{          //hamburger menu close
+const hamburgerClose=()=>{         
     dropMenu.style.display='none';
     hamburger.style.display = 'block';
     closeHamburger.style.display='none';
 }
-hamburger.addEventListener('click', (e)=>{hamburgerOpen()});        //trigger on hamburger
+hamburger.addEventListener('click', (e)=>{hamburgerOpen()});        
 closeHamburger.addEventListener('click', (e)=>{hamburgerClose()});
 
 
-const changePicture=(shiftWhere)=>{               //image changer function using the fa fa-angles
+const changePicture=(shiftWhere)=>{              
 
     let picturesInObject;
 
@@ -131,7 +131,7 @@ const changePicture=(shiftWhere)=>{               //image changer function using
         if(movementTracker<0){movementTracker=numberOfPictures-1;}
         else if (movementTracker>=numberOfPictures){ movementTracker=0;}
      }
-    Array.from(pictureList).forEach((picture) => {    //object must be serialized first! painful discovery!
+    Array.from(pictureList).forEach((picture) => {    
         console.log(picture);
         console.log(movementTracker);
         picture.style.display = "none";
@@ -141,7 +141,7 @@ const changePicture=(shiftWhere)=>{               //image changer function using
 }
 
 const sizehandler=()=>{
-    document.querySelectorAll('div.size').forEach(element => {  //control for the selection of sizes
+    document.querySelectorAll('div.size').forEach(element => {  
         element.addEventListener('click', (e)=>{
            document.querySelectorAll('div.size').forEach(element=>{ element.style.border='none'});
            e.target.style.border='solid 1px blue'
@@ -152,7 +152,7 @@ const sizehandler=()=>{
 sizehandler();
 
 
-function quantityControl(operator){   //quantity control function       
+function quantityControl(operator){          
     if (operator==='minus' && currentQuantity>1) {
         console.log('minus clicked')
         currentQuantity--;
@@ -165,7 +165,7 @@ function quantityControl(operator){   //quantity control function
 }
 
 
-function couponCodeGenerator(){   //generate 5 digit code for the coupon discount
+function couponCodeGenerator(){   
     let couponCodeSaverArray = [];
     let hexRef = [1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','0'];
     for(let i = 0; i < 5; i++){
@@ -175,8 +175,8 @@ function couponCodeGenerator(){   //generate 5 digit code for the coupon discoun
     return couponCodeSaverArray.join("");
 }
 
-/*Add to bag and order processing here !!!!!!!!!!!!!!*/
-function generateOrderNumber(){           //this function generates a random order number
+
+function generateOrderNumber(){          
     let orderNumberArray = [];
     let Ref1 = ['A','B','C','D','E','F'];
     let Ref2 = ['0',1,2,3,4,5,6,7,8,9]
@@ -191,7 +191,7 @@ function generateOrderNumber(){           //this function generates a random ord
     return orderNumberArray.join("");
 }
 
-// order and object handling!!!
+
 
 
 document.getElementById('add-to-bag').addEventListener('click',(e)=>{ orderHandler(); })
@@ -203,10 +203,10 @@ function orderHandler(){
         const coupon= couponCodeGenerator();
         let thisUnitPrice = +productPrice.innerText.match(/\d+/g,'')
         let thisQuantity = +quantityTag.innerHTML;
-        console.log(quantityTag.innerHTML)
+       
         let thisSubTotal= +thisUnitPrice * thisQuantity;
         let thisDiscount = thisSubTotal/2;
-        //let thisUrl= document.getElementById('p-image').src
+       
         new_order={
             order_number: newOrderNumber,
             discount_coupon: coupon,
@@ -232,7 +232,7 @@ function orderHandler(){
         new_order.counter = +new_order.counter + 1;
         console.log(new_order.counter + 'add');
         let serial='item'+ new_order.counter.toString();
-        //thisUrl= document.getElementById('p-image').src
+       
         new_order[serial]={product_name: productName.innerText,
                           product_unit_price:productPrice.innerText,
                           product_color: colorDescription.innerText,
@@ -252,7 +252,7 @@ function orderHandler(){
 
 
 
-    function imageLink(){             // image display
+    function imageLink(){             
         let theUrl;
         if(OnDisplayNow==='green'){
             theUrl=BluePolka.images[1];
@@ -268,8 +268,8 @@ function orderHandler(){
        
 }
 
-//cart addition here!!!!!
-let cartSubTotal=(new_order)=>{   // Add 
+
+let cartSubTotal=(new_order)=>{   
         
         console.log(new_order);
         let subTotal=0;
@@ -293,10 +293,10 @@ let cartSubTotal=(new_order)=>{   // Add
 
 
 
-// media queries below!!!!!!!!!!!!!
 
 
-const mediaQuery = '(min-width: 700px)';                    //Mediawatch for responsive display
+
+const mediaQuery = '(min-width: 700px)';                    
 const mediaQueryList = window.matchMedia(mediaQuery);
 
 mediaQueryList.addEventListener('change', event => {
@@ -310,9 +310,9 @@ mediaQueryList.addEventListener('change', event => {
   }
 })
 
-//Pop-up Cart Handler!!!!!!!!
 
-function popUpHandler(new_order){                  //Open popup and populate the data
+
+function popUpHandler(new_order){                  
     let pop = document.getElementById('pop_up');
         let index = new_order.counter;
         let base = 'item'+ index;
@@ -332,5 +332,5 @@ function popUpHandler(new_order){                  //Open popup and populate the
 }
 
 function popClose(){
-    document.getElementById('pop_up').style.display = ('none');// close the popup
+    document.getElementById('pop_up').style.display = ('none');
 }

@@ -21,9 +21,9 @@ let subTotal=0;
 
 let objName = 'item';
 for(let i=1; i <= +quantitySoFar; i++ ){
-    let thisObjName= objName + quantitySoFar;
+    let thisObjName= objName + i;
     let price=+new_order[thisObjName].product_unit_price.match(/\d+/g)*(+new_order[thisObjName].quantity);
-    console.log(i);
+    
    
     subTotal=subTotal+(price); 
     
@@ -36,7 +36,6 @@ return subTotal;
 
 
 
-//Delete Handler !!!!!!
 
 function remove(itemName){
 idToRemove=itemName.getAttribute('id');
@@ -89,7 +88,7 @@ createCartObjects()
 
 
 
-//code to regenerate cart object below!!!!!!!!!
+
 
 let createCartObjects=()=>{
 

@@ -334,7 +334,7 @@ h6>div{
         padding:1rem;
         padding-top: 0.2rem;
         padding-bottom: 0.2rem;
-        /* margin-top: 1%; */
+       
         border: solid 1px rgb(207, 26, 26);
         background-color:rgb(207, 26, 26);
         border-radius: 0.3rem;
@@ -348,10 +348,9 @@ h6>div{
         background-color: white;
         width: 25rem;
         height: 30rem;
-        /* float: right; */
+        
         position: fixed;
-        /* position: -webkit-sticky;
-        bottom: 0%;*/
+        
         right: 1rem;
         top: 10rem;
     }
@@ -365,7 +364,7 @@ h6>div{
         position: static;
         display: inline-block;
         right: 53rem;
-        /* top: 2rem; */
+        
     }
     .description h6{
         display: inline-block;
@@ -386,7 +385,7 @@ h6>div{
         text-align: center;
         font-size: 0.9rem;
         font-weight: bold;
-        /* margin-top: 1rem; */
+        
         padding: 0.2rem;
     }
     .description #dropdown:hover{
@@ -439,7 +438,7 @@ h6>div{
     margin-left: 3rem;
     padding: 0.5rem;
     font-size: large;
-    /* margin-bottom: 1rem; */
+   
 }
 
 #tax{
